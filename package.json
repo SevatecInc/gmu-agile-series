@@ -12,7 +12,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "test-coverage": "react-scripts test --env=jsdom --coverage"
+    "test-coverage": "react-scripts test --env=jsdom --coverage",
+    "test-ci": "export CI=true && react-scripts test"
   },
   "eslintConfig": {
     "extends": "react-app"

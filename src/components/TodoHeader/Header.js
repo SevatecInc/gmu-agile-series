@@ -1,31 +1,42 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, {Component} from 'react';
 
-function TodoHeader(props) {
+import TodoList from '../TodoList/Main';
 
-
-  return (
-    <div>
-      Todos:
-    
-      <div className="header">
-        <form>
-          <input placeholder="enter your todo"/>
-          <button type="submit">Save Todo</button>
-        </form>
+class TodoHeader extends Component {
 
 
+  onChange = (e) => {
+    this.setState({ thingToAdd: e.target.value});
+  }
+
+  handleSave = (e) => {
+    this.setState({ thingToAdd : '', thingsToDo: [...this.state.thingsToDo, this.state.thingToAdd] });
+  }
+
+  state = {
+    thingsToDo: [],
+    thingToAdd: ''
+  }
+  
+  render() {
+    return (
+      <div>
+        Todos:
+      
+        <div className="header">
+          
+            <input placeholder="enter your todo" 
+              value={this.state.thingToAdd} onChange={this.onChange} />
+
+            <button onClick={this.handleSave}>Save Todo</button>
+          
+
+          <TodoList items={this.state.thingsToDo} />
+        </div>
       </div>
-    </div>
-  );
-}
+    )
+  }
 
-TodoHeader.propTypes = {
-  thingsToDo: PropTypes.array,
-}
-
-TodoHeader.defaultProps = {
-  thingsToDo: [],
 }
 
 export default TodoHeader;

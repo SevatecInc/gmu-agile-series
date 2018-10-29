@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import TodoList from './components/TodoList/Main';
+import TodoHeader from './components/TodoHeader/Header';
 
 class App extends Component {
   render() {
@@ -13,7 +13,7 @@ class App extends Component {
            Aren't we awesome?!
           </p>
           
-          <TodoList items={[]} />
+          <TodoHeader />
         </header>
       </div>
     );
