@@ -9,6 +9,13 @@ function TodoList(props) {
     return <span className="empty-message">Nothing to see here.</span>
   }
 
+  return (
+    <ul className="list-items">
+    {
+      items.map(item => <li key={item} className="item">{item}</li>)
+    }
+    </ul>
+  );
 }
 
 TodoList.propTypes = {
