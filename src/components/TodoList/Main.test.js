@@ -16,7 +16,7 @@ describe('Todos List Tests', () => {
   });
 
   it('renders items', ()=>{
-    const dataItems = [ 'Wonder Woman', 'Thanos' ];
+    const dataItems = [ 'Wonder Twins', 'Thanos' ];
     const wrapper = shallow(<TodoList items={dataItems} />);
 
     expect(wrapper.find('.list-items')).toBeDefined();
@@ -25,10 +25,10 @@ describe('Todos List Tests', () => {
 
   it('renders a list item', () => {
 
-    const dataItems = [ 'Wonder Woman' ];
+    const dataItems = [ 'Wonder Twins' ];
     const wrapper = shallow(<TodoList items={dataItems} />);
 
-    expect(wrapper.contains(<li key='Wonder Woman' className="item">Wonder Woman</li>)).toBeTruthy();
+    expect(wrapper.contains(<li key='Wonder Twins' className="item">Wonder Twins</li>)).toBeTruthy();
 
 
   });
