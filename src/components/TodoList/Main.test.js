@@ -9,8 +9,9 @@ describe('Todos List Tests', () => {
 
     const dataItems = [];
     const wrapper = shallow(<TodoList items={dataItems} />);
-
-    expect(wrapper.find('.empty-message')).toBeDefined();
+    const div = wrapper.find('.empty-message');
+    
+    expect(div).toHaveLength(1);
 
 
   });
@@ -19,7 +20,8 @@ describe('Todos List Tests', () => {
     const dataItems = [ 'Wonder Twins', 'Thanos' ];
     const wrapper = shallow(<TodoList items={dataItems} />);
 
-    expect(wrapper.find('.list-items')).toBeDefined();
+    console.log(wrapper.debug())
+    expect(wrapper.find('.list-items')).toHaveLength(1);
     expect(wrapper.find('.item')).toHaveLength(dataItems.length);
   });
 
