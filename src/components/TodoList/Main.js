@@ -6,9 +6,16 @@ function TodoList(props) {
   const {items} = props;
 
   if(!items.length) {
-    return <span className="empty-message">Nothing to see here.</span>
+    return <div className="empty-message">Nothing to see here.</div>
   }
 
+  return (
+    <ul className="list-items">
+    {
+      items.map(item => <li key={item} className="item">{item}</li>)
+    }
+    </ul>
+  );
 }
 
 TodoList.propTypes = {

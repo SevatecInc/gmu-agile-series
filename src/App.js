@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import TodoHeader from './components/TodoHeader/Header';
 
 class App extends Component {
   render() {
@@ -11,14 +12,8 @@ class App extends Component {
           <p>
            Aren't we awesome?!
           </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          
+          <TodoHeader />
         </header>
       </div>
     );
